@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcqaovhuxqyuj"]
+
+[ext_resource type="Script" path="res://codigos/personagem.gd" id="1_4gqyr"]
+[ext_resource type="SpriteFrames" uid="uid://hdspy1q4p4ip" path="res://assets/assets/animations/anim_j.tres" id="2_43guf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anq3e"]
+size = Vector2(173.5, 298.5)
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(137, 364)
+script = ExtResource("1_4gqyr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(419, -45)
+sprite_frames = ExtResource("2_43guf")
+animation = &"anda"
+frame_progress = 0.038519
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(417.25, -47.25)
+shape = SubResource("RectangleShape2D_anq3e")
