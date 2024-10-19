@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqojgeaoor2qh"]
+
+[ext_resource type="Script" path="res://codigos/menu.gd" id="1_v3fik"]
+[ext_resource type="Texture2D" uid="uid://daxnml2g7gqmu" path="res://recursos/menu/lojaNormal.png" id="2_rxty5"]
+[ext_resource type="Texture2D" uid="uid://o3rqk2262p0" path="res://recursos/menu/lojaApertado.png" id="3_5ytu3"]
+[ext_resource type="Texture2D" uid="uid://dlurj758yb1yt" path="res://recursos/jogo/jogoNormal.png" id="4_imq3r"]
+[ext_resource type="Texture2D" uid="uid://bsfpjlvn5flk4" path="res://recursos/jogo/jogoApertado.png" id="5_ochon"]
+[ext_resource type="Texture2D" uid="uid://bnnbkidb48y7e" path="res://recursos/test/testNormal.png" id="6_t1imt"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_v3fik")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="btnLoja" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 314.0
+offset_right = 1205.0
+offset_bottom = 464.0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("2_rxty5")
+texture_pressed = ExtResource("3_5ytu3")
+
+[node name="btnJogo" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 492.0
+offset_right = 1208.0
+offset_bottom = 642.0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("4_imq3r")
+texture_pressed = ExtResource("5_ochon")
+
+[node name="labelAtaque" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="labelVida" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextureButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 338.0
+offset_right = 700.0
+offset_bottom = 488.0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("6_t1imt")
+
+[connection signal="pressed" from="Control/btnLoja" to="." method="_on_btn_loja_pressed"]
+[connection signal="pressed" from="Control/btnJogo" to="." method="_on_btn_jogo_pressed"]
+[connection signal="pressed" from="Control/TextureButton" to="." method="_on_texture_button_pressed"]

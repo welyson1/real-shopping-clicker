@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx35gy53q5s5"]
+
+[ext_resource type="Script" path="res://codigos/loja.gd" id="1_xnpom"]
+
+[node name="Loja" type="Node2D"]
+script = ExtResource("1_xnpom")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 468.0
+offset_top = 240.0
+offset_right = 508.0
+offset_bottom = 280.0
+
+[node name="labelDinheiro" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 100
+text = "Loja"
