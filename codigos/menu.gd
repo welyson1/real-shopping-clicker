@@ -19,7 +19,7 @@ func _on_btn_jogo_pressed() -> void:
 	get_tree().change_scene_to_file("res://cenas/jogo.tscn")
 
 func _on_texture_button_pressed() -> void:
-	gerenciadorJogo.causar_dano_ao_jogador(3.0)
+	gerenciadorJogo.aplicar_dano_ao_jogador(10)
 	pass
 
 func update_money_label():

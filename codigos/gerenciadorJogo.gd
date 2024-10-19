@@ -27,9 +27,13 @@ var diminuicaoA3carregamento: float = 2.0
 var gruposDesbloqueados = {500: false, 1000: false, 1500: false}
 
 # Função para aplicar dano ao inimigo e atualizar poderDeCompra
+func aplicar_dano_ao_jogador(dano: int) -> void:
+	vida -= dano
+
+# Função para aplicar dano ao inimigo e atualizar poderDeCompra
 func aplicar_dano_ao_inimigo(dano: int) -> void:
-	inimigo_vida -= dano
-	if inimigo_vida <= 0:
+	vida -= dano
+	if vida <= 0:
 		inimigo_derrotado()
 	poderDeCompra += dano
 	desbloquear_grupos_itens()
@@ -45,25 +49,33 @@ func desbloquear_grupos_itens() -> void:
 			gruposDesbloqueados[limite] = true
 
 # Função para verificar se o jogador pode comprar algo na loja
-func pode_comprar(valor: int) -> bool:
+func tem_dinheiro(valor: int) -> bool:
 	return dinheiro >= valor
+
+func tem_poderDeCompra(valor: int) -> bool:
+	return poderDeCompra >= valor
 
 # Função para comprar algo e aplicar o upgrade
 func comprar_upgrade(tipo: String) -> void:
 	match tipo:
 		"aumentoVida":
-			if pode_comprar(100):  # Exemplo de custo
-				dinheiro -= 100
-				aumentar_vida(aumentoVida)
+			if tem_dinheiro(100):  # Exemplo de custo
+				if tem_poderDeCompra(500):
+					dinheiro -= 100
+					aumentar_vida(aumentoVida)
 		"aumentoA1dano":
-			if pode_comprar(200):
+			if tem_dinheiro(200):
 				dinheiro -= 200
 				ataque1dano += aumentoA1dano
 		"aumentoA1dano":
-			if pode_comprar(200):
+			if tem_dinheiro(200):
 				dinheiro -= 200
 				ataque1dano += aumentoA1dano
 		# Continue com as demais compras de upgrades...
+
+func feedback_usuario(feedback: String) -> void:
+	pass
+	
 
 # Função chamada quando o inimigo é derrotado
 func inimigo_derrotado() -> void:

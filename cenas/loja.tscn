@@ -1,21 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx35gy53q5s5"]
+[gd_scene load_steps=3 format=3 uid="uid://bx35gy53q5s5"]
 
 [ext_resource type="Script" path="res://codigos/loja.gd" id="1_xnpom"]
+[ext_resource type="Texture2D" uid="uid://cawiecve5t2co" path="res://recursos/loja/Map.jpg" id="2_taky2"]
 
 [node name="Loja" type="Node2D"]
+position = Vector2(602, 0)
 script = ExtResource("1_xnpom")
+
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(7426, 326)
+scale = Vector2(0.49, 0.49)
+texture = ExtResource("2_taky2")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 468.0
-offset_top = 240.0
-offset_right = 508.0
-offset_bottom = 280.0
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_vertical = 0
 
-[node name="labelDinheiro" type="Label" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 100
-text = "Loja"
+[node name="BoxContainer" type="BoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.5
+offset_right = 71.5
+offset_bottom = 77.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/BoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="labelDinheiro" type="Label" parent="Control/BoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="labelVida" type="Label" parent="Control/BoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="labelPoderCompra" type="Label" parent="Control/BoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
