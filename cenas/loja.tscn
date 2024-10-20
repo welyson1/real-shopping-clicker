@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx35gy53q5s5"]
+[gd_scene load_steps=5 format=3 uid="uid://bx35gy53q5s5"]
 
 [ext_resource type="Script" path="res://codigos/loja.gd" id="1_xnpom"]
-[ext_resource type="PackedScene" uid="uid://br7tngwlgbw5p" path="res://cenas/personagem.tscn" id="2_jrxoj"]
+[ext_resource type="PackedScene" uid="uid://b58dw3byfpt8" path="res://cenas/personagem.tscn" id="2_jrxoj"]
 [ext_resource type="Texture2D" uid="uid://cawiecve5t2co" path="res://recursos/loja/Map.jpg" id="2_taky2"]
+[ext_resource type="PackedScene" uid="uid://4awxafj7673i" path="res://cenas/btnVoltar.tscn" id="4_curru"]
 
 [node name="Loja" type="Node2D"]
 position = Vector2(602, 0)
@@ -14,16 +15,26 @@ scale = Vector2(0.49, 0.49)
 texture = ExtResource("2_taky2")
 
 [node name="player" parent="." instance=ExtResource("2_jrxoj")]
-position = Vector2(-450, 524)
+position = Vector2(-441, 491)
 
-[node name="Control" type="Control" parent="."]
+[node name="Control2" parent="player" instance=ExtResource("4_curru")]
+offset_left = -146.0
+offset_top = -464.0
+offset_right = -146.0
+offset_bottom = -464.0
+
+[node name="Control" type="Control" parent="player"]
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
+offset_left = 441.0
+offset_top = -491.0
+offset_right = 441.0
+offset_bottom = -491.0
 grow_horizontal = 2
 size_flags_vertical = 0
 
-[node name="BoxContainer" type="BoxContainer" parent="Control"]
+[node name="BoxContainer" type="BoxContainer" parent="player/Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -34,18 +45,18 @@ offset_bottom = 77.0
 grow_horizontal = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/BoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="player/Control/BoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 70
 
-[node name="labelDinheiro" type="Label" parent="Control/BoxContainer/HBoxContainer"]
+[node name="labelDinheiro" type="Label" parent="player/Control/BoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 
-[node name="labelVida" type="Label" parent="Control/BoxContainer/HBoxContainer"]
+[node name="labelVida" type="Label" parent="player/Control/BoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 
-[node name="labelPoderCompra" type="Label" parent="Control/BoxContainer/HBoxContainer"]
+[node name="labelPoderCompra" type="Label" parent="player/Control/BoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20

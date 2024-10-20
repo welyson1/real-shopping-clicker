@@ -9,9 +9,9 @@ func _ready():
 # Função para atualizar o texto do Label com o valor do dinheiro
 func update_labels():
 	# Acessa o Label pelo nome do nó
-	var dinheiro_label = $Control/BoxContainer/HBoxContainer/labelDinheiro
-	var vida_label = $Control/BoxContainer/HBoxContainer/labelVida
-	var poderCompra_label = $Control/BoxContainer/HBoxContainer/labelPoderCompra
+	var dinheiro_label = $player/Control/BoxContainer/HBoxContainer/labelDinheiro
+	var vida_label = $player/Control/BoxContainer/HBoxContainer/labelVida
+	var poderCompra_label = $player/Control/BoxContainer/HBoxContainer/labelPoderCompra
 	# Atualiza o texto do Label com o valor
 	dinheiro_label.text = "Dinheiro: " + str(gerenciadorJogo.dinheiro)
 	vida_label.text = "Vida: " + str(gerenciadorJogo.vida)

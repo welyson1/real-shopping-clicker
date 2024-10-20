@@ -20,24 +20,3 @@ func _ready():
 			animated_sprite.frames = sprite_textureWelyson
 		_:
 			print("Personagem não encontrado!")
-
-func _physics_process(delta: float) -> void:
-	input.x = Input.get_axis("move_left", "move_right")
-	input = input.normalized()
-	
-	velocity = input * speed
-	move_and_slide()
-	
-	update_animation()
-	
-func update_animation():
-	# Se houver movimento
-	if input != Vector2.ZERO:
-		# Prioriza o movimento horizontal para o flip
-		if input.x != 0:
-			animated_sprite.flip_h = input.x < 0
-		
-		animated_sprite.play("anda")
-	else:
-		# Quando parado
-		animated_sprite.play("parado")

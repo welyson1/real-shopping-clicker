@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvlnf3t2mmqik"]
+[gd_scene load_steps=4 format=3 uid="uid://bk7pkxp6p7dqv"]
 
-[ext_resource type="Script" path="res://codigos/personagem.gd" id="1_spw4a"]
+[ext_resource type="Script" path="res://codigos/personagemInicial.gd" id="1_3yp2o"]
 [ext_resource type="SpriteFrames" uid="uid://c1naued8cm6r8" path="res://assets/assets/animations/anim_w.tres" id="2_4ao24"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anq3e"]
@@ -8,7 +8,7 @@ size = Vector2(173.5, 298.5)
 
 [node name="player" type="CharacterBody2D"]
 position = Vector2(137, 364)
-script = ExtResource("1_spw4a")
+script = ExtResource("1_3yp2o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(419, -45)

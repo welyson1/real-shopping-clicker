@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2xjhnpcyn5ge"
-path="res://.godot/imported/tilesheet_cadeado.png-8b29123dddeec657ba2b1f7a536ed63a.ctex"
+uid="uid://cve44ua7y34ao"
+path="res://.godot/imported/poderBackground.png-982f27278ea90de193c66a2fb66e457a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesheets/tilesheet_cadeado.png"
-dest_files=["res://.godot/imported/tilesheet_cadeado.png-8b29123dddeec657ba2b1f7a536ed63a.ctex"]
+source_file="res://recursos/jogo/poderBackground.png"
+dest_files=["res://.godot/imported/poderBackground.png-982f27278ea90de193c66a2fb66e457a.ctex"]
 
 [params]
 

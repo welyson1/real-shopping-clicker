@@ -32,7 +32,8 @@ func aplicar_dano_ao_jogador(dano: int) -> void:
 
 # Função para aplicar dano ao inimigo e atualizar poderDeCompra
 func aplicar_dano_ao_inimigo(dano: int) -> void:
-	vida -= dano
+	inimigo_vida -= dano
+	print("Inimigo sofreu ", inimigo_vida, " de dano!")
 	if vida <= 0:
 		inimigo_derrotado()
 	poderDeCompra += dano

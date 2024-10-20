@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://baos5xquuovin"]
+
+[ext_resource type="Script" path="res://codigos/personagem_jogo.gd" id="1_44q8o"]
+[ext_resource type="SpriteFrames" uid="uid://hdspy1q4p4ip" path="res://assets/assets/animations/anim_j.tres" id="2_a3amw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anq3e"]
+size = Vector2(173.5, 298.5)
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(137, 364)
+script = ExtResource("1_44q8o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(136, -60)
+sprite_frames = ExtResource("2_a3amw")
+animation = &"ataca3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(134.25, -62.25)
+shape = SubResource("RectangleShape2D_anq3e")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(435, -40)

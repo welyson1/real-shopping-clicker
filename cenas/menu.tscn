@@ -1,14 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqojgeaoor2qh"]
+[gd_scene load_steps=9 format=3 uid="uid://dqojgeaoor2qh"]
 
 [ext_resource type="Script" path="res://codigos/menu.gd" id="1_v3fik"]
 [ext_resource type="Texture2D" uid="uid://daxnml2g7gqmu" path="res://recursos/menu/lojaNormal.png" id="2_rxty5"]
 [ext_resource type="Texture2D" uid="uid://o3rqk2262p0" path="res://recursos/menu/lojaApertado.png" id="3_5ytu3"]
 [ext_resource type="Texture2D" uid="uid://dlurj758yb1yt" path="res://recursos/jogo/jogoNormal.png" id="4_imq3r"]
 [ext_resource type="Texture2D" uid="uid://bsfpjlvn5flk4" path="res://recursos/jogo/jogoApertado.png" id="5_ochon"]
-[ext_resource type="Texture2D" uid="uid://bnnbkidb48y7e" path="res://recursos/test/testNormal.png" id="6_t1imt"]
-[ext_resource type="PackedScene" uid="uid://dcqaovhuxqyuj" path="res://cenas/personagemInicialJoice.tscn" id="7_wluy5"]
-[ext_resource type="PackedScene" uid="uid://y7p4radp5rje" path="res://cenas/personagemInicialLucas.tscn" id="8_oiybh"]
-[ext_resource type="PackedScene" uid="uid://dvlnf3t2mmqik" path="res://cenas/personagemInicialWelisson.tscn" id="9_b6ln3"]
+[ext_resource type="PackedScene" uid="uid://djj4e74g7ordr" path="res://cenas/personagemInicialJoice.tscn" id="7_wluy5"]
+[ext_resource type="PackedScene" uid="uid://hawr2y0r4w0" path="res://cenas/personagemInicialLucas.tscn" id="8_oiybh"]
+[ext_resource type="PackedScene" uid="uid://bk7pkxp6p7dqv" path="res://cenas/personagemInicialWelisson.tscn" id="9_b6ln3"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_v3fik")
@@ -19,44 +18,58 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="btnLoja" type="TextureButton" parent="Control"]
-layout_mode = 0
-offset_left = 808.0
-offset_top = 131.0
-offset_right = 1208.0
-offset_bottom = 281.0
-scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("2_rxty5")
-texture_pressed = ExtResource("3_5ytu3")
-
 [node name="btnJogo" type="TextureButton" parent="Control"]
 layout_mode = 0
 offset_left = 811.0
-offset_top = 309.0
+offset_top = 188.0
 offset_right = 1211.0
-offset_bottom = 459.0
+offset_bottom = 338.0
 scale = Vector2(0.8, 0.8)
 texture_normal = ExtResource("4_imq3r")
 texture_pressed = ExtResource("5_ochon")
 
-[node name="labelAtaque" type="Label" parent="Control"]
+[node name="btnLoja" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="labelVida" type="Label" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="TextureButton" type="TextureButton" parent="Control"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = -158.0
-offset_right = 423.0
-offset_bottom = -7.99997
+offset_left = 811.0
+offset_top = 323.0
+offset_right = 1211.0
+offset_bottom = 473.0
 scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("6_t1imt")
+texture_normal = ExtResource("2_rxty5")
+texture_pressed = ExtResource("3_5ytu3")
+
+[node name="btnEscolherWelyson" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 525.0
+offset_right = 226.0
+offset_bottom = 556.0
+text = "Escolher"
+
+[node name="btnEscolherJoice" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 525.0
+offset_right = 452.0
+offset_bottom = 556.0
+text = "Escolher"
+
+[node name="btnEscolherLucas" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 636.0
+offset_top = 525.0
+offset_right = 710.0
+offset_bottom = 556.0
+text = "Escolher"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 62.0
+offset_right = 642.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 40
+text = "Escolha o personagem"
 
 [node name="player" parent="." instance=ExtResource("7_wluy5")]
 position = Vector2(-6, 372)
@@ -67,6 +80,8 @@ position = Vector2(246, 355)
 [node name="player3" parent="." instance=ExtResource("9_b6ln3")]
 position = Vector2(-248, 365)
 
-[connection signal="pressed" from="Control/btnLoja" to="." method="_on_btn_loja_pressed"]
 [connection signal="pressed" from="Control/btnJogo" to="." method="_on_btn_jogo_pressed"]
-[connection signal="pressed" from="Control/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Control/btnLoja" to="." method="_on_btn_loja_pressed"]
+[connection signal="pressed" from="Control/btnEscolherWelyson" to="." method="_on_btn_escolher_welyson_pressed"]
+[connection signal="pressed" from="Control/btnEscolherJoice" to="." method="_on_btn_escolher_joice_pressed"]
+[connection signal="pressed" from="Control/btnEscolherLucas" to="." method="_on_btn_escolher_lucas_pressed"]

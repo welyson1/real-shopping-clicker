@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	update_money_label()
+	pass
 
 
 func _on_btn_loja_pressed() -> void:
@@ -22,8 +22,17 @@ func _on_texture_button_pressed() -> void:
 	gerenciadorJogo.aplicar_dano_ao_jogador(10)
 	pass
 
-func update_money_label():
-	# Acessa o Label pelo nome do nó
-	var money_label = $Control/labelVida
-	# Atualiza o texto do Label com o valor da variável de dinheiro
-	money_label.text = "Vida: " + str(gerenciadorJogo.vida)
+
+func _on_btn_escolher_welyson_pressed() -> void:
+	gerenciadorJogo.personagemEscolhido = 1
+	print("Personagem selecionado 1")
+
+
+func _on_btn_escolher_joice_pressed() -> void:
+	gerenciadorJogo.personagemEscolhido = 2
+	print("Personagem selecionado 2")
+
+
+func _on_btn_escolher_lucas_pressed() -> void:
+	gerenciadorJogo.personagemEscolhido = 3
+	print("Personagem selecionado 3")
